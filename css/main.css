@@ -1,0 +1,884 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #11405f;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+img.service-icon {
+  height: 80px;
+  width: auto;
+  max-width: 80px;
+}
+
+.final-phrase {
+  text-align: center;
+  font-style: italic;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  padding: 0 20px;
+}
+
+img.service-icon {
+  height: 80px;
+  width: auto;
+  max-width: 80px; /* Esta línea es la clave para que no sean "inmensas" */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Alexandra", serif;
+  color: #11405f;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #11405f;
+}
+a:hover {
+  color: #f6bde1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.main-header {
+  background-color: #ffffff;
+  padding: 20px 0;
+}
+.main-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .main-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.main-header .logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+@media (min-width: 1024px) {
+  .main-header .logo-container {
+    margin-bottom: 0;
+  }
+}
+.main-header .logo-container .logo-img {
+  height: 50px;
+  margin-right: 10px;
+  animation: pulse 4s infinite ease-in-out;
+}
+.main-header .logo-container .logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: #11405f;
+  font-family: "Montserrat", sans-serif;
+}
+.main-header .main-nav {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .main-header .main-nav {
+    width: auto;
+  }
+}
+.main-header .main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+.main-header .main-nav ul li {
+  flex-basis: auto;
+  margin: 0 5px;
+  text-align: center;
+  position: relative;
+}
+.main-header .main-nav ul li a {
+  display: block;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #11405f;
+}
+.main-header .main-nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  flex-direction: column;
+}
+.main-header .main-nav ul li ul li {
+  width: 250px;
+  flex-basis: 100%;
+  text-align: left;
+  margin: 0;
+}
+.main-header .main-nav ul li ul li a {
+  padding: 10px 20px;
+}
+.main-header .main-nav ul li:hover > ul {
+  display: block;
+}
+
+.main-footer {
+  background-color: #11405f;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+.main-footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .main-footer .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.main-footer .social-icons {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+.main-footer .social-icons a {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+.main-footer .social-icons a:hover {
+  color: #f6bde1;
+}
+
+/* --- HERO SECTION (solo en index.html) --- */
+.hero {
+  background-color: #fbe2e1;
+  padding: 50px 0;
+}
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .hero .container {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+}
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .hero-image {
+    flex: 1;
+    margin-right: 40px;
+  }
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .hero-text {
+    flex: 1;
+  }
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+/* SECCIÓN SERVICIOS (HOME) */
+.services {
+  padding: 50px 0;
+}
+.services-container {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.services-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* CENTRADO DE TEXTOS */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* SOLUCIÓN FINAL: FORZAMOS EL CENTRADO DE ÍCONOS */
+  align-items: center !important;
+  height: 100%;
+  /* CORRECCIÓN: TAMAÑO Y POSICIÓN DEL ÍCONO */
+}
+.services-card img.service-icon {
+  height: 100px;
+  width: auto;
+  margin-bottom: 20px;
+}
+.services-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.services-card p {
+  font-size: 1rem;
+  flex-grow: 1;
+}
+.services-card {
+  /* SOLUCIÓN BOTONES: Estilo para los enlaces "Ver más" (.link-card) */
+}
+.services-card .link-card {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.services-card .link-card:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
+.services-card .link-card {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.contact-page {
+  padding: 50px 0;
+  background-color: #fbe2e1;
+}
+.contact-page .container .contact-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.contact-page .container .contact-intro h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+.contact-page .container .contact-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.contact-page .container .contact-form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 30px auto;
+}
+.contact-page .container .contact-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.contact-page .container .contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-page .container .contact-form-container form label {
+  font-weight: bold;
+  color: #11405f;
+}
+.contact-page .container .contact-form-container form input,
+.contact-page .container .contact-form-container form textarea,
+.contact-page .container .contact-form-container form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #a3a895;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.contact-page .container .contact-form-container form button {
+  background-color: #11405f;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.contact-page .container .contact-form-container form button:hover {
+  background-color: #f6bde1;
+  color: #11405f;
+}
+.contact-page .container .social-contact {
+  text-align: center;
+  margin-top: 50px;
+}
+.contact-page .container .social-contact h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.contact-page .container .social-contact .social-links-contact {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.contact-page .container .social-contact .contact-link {
+  color: #11405f;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.contact-page .container .social-contact .contact-link:hover {
+  color: #f6bde1;
+}
+
+.about {
+  padding: 50px 0;
+}
+.about-hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.about-hero h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+.about-hero h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #11405f;
+  font-family: "Montserrat", sans-serif;
+}
+.about-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+.about-journey {
+  margin-top: 40px;
+  text-align: center;
+}
+.about-journey h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.about-journey .journey-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .about-journey .journey-container {
+    flex-direction: row;
+  }
+}
+.about-journey .journey-card {
+  background-color: #fbe2e1;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.about-journey .journey-card h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #11405f;
+}
+.about-journey .journey-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+.about-journey .journey-card ul li {
+  margin-bottom: 5px;
+}
+.about-philosophy {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 40px 0;
+  color: #a3a895;
+}
+.about-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+.about-cta h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.about-cta .cta-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media (min-width: 768px) {
+  .about-cta .cta-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.about-cta .cta-link {
+  display: block;
+  padding: 10px 20px;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  color: #11405f;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.about-cta .cta-link:hover {
+  background-color: #11405f;
+  color: #ffffff;
+}
+.about .cta-button {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.cases-page {
+  padding: 50px 0;
+  background-color: #fbe2e1;
+}
+.cases-page .cases-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.cases-page .cases-intro h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+.cases-page .cases-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.cases-page .cases-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .cases-page .cases-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.cases-page .case-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+  .cases-page .case-card {
+    flex: 1 1 48%;
+  }
+}
+.cases-page .case-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #11405f;
+}
+.cases-page .case-card h4 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  color: #a3a895;
+  margin-bottom: 15px;
+}
+.cases-page .cases-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* SECCIÓN TESTIMONIOS (Usado en casos-exito o en otras páginas) */
+.testimonials {
+  padding: 50px 0;
+  background-color: #ffffff;
+}
+.testimonials .testimonial-box {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.testimonials .author {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.testimonials .more-cases {
+  text-align: center;
+  margin-top: 30px;
+  /* CORRECCIÓN: Convierte el enlace en un botón estilizado */
+}
+.testimonials .more-cases a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.testimonials .more-cases a:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
+.testimonials .more-cases a {
+  margin-top: 20px;
+}
+
+.services-page,
+.service-detail { /* APLICAR A AMBOS SELECTORES */
+  padding: 50px 0;
+  background-color: #fbe2e1 !important; /* FORZAMOS EL COLOR ROSA CLARO */
+}
+.services-page a.btn-diagnostico,
+.services-page a.btn-primary,
+.service-detail a.btn-diagnostico,
+.service-detail a.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.services-page a.btn-diagnostico:hover,
+.services-page a.btn-primary:hover,
+.service-detail a.btn-diagnostico:hover,
+.service-detail a.btn-primary:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
+.services-page a.btn-diagnostico,
+.services-page a.btn-primary,
+.service-detail a.btn-diagnostico,
+.service-detail a.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+}
+.services-page img,
+.service-detail img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+}
+.services-page .service-hero-image img,
+.service-detail .service-hero-image img {
+  max-width: 350px; /* Tamaño unificado */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto 20px;
+}
+
+.service-content img {
+  max-width: 300px; /* Tamaño de imagen de contenido */
+  height: auto;
+  border-radius: 10px;
+  margin: 30px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-page {
+  /* SOLUCIÓN: Uniformidad de Fondo y Centrado General */
+  background-color: #fbe2e1;
+  text-align: center;
+}
+.service-page .service-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.service-page .service-intro h1 {
+  font-size: 2rem;
+  color: #11405f;
+}
+.service-page .service-intro h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #11405f;
+  font-family: "Montserrat", sans-serif;
+}
+.service-page .service-intro {
+  /* SOLUCIÓN: Botón "Solicita una conversación..." (.btn-diagnostico) */
+}
+.service-page .service-intro .btn-diagnostico {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.service-page .service-intro .btn-diagnostico:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
+.service-page .service-intro .btn-diagnostico {
+  margin-top: 20px;
+}
+.service-page {
+  /* SOLUCIÓN: Botón "Ver Programa" y Fondo Blanco del CTA Secundario */
+}
+.service-page .service-secondary-cta {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 30px;
+}
+.service-page .service-secondary-cta h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #11405f;
+  font-family: "Montserrat", sans-serif;
+}
+.service-page .service-secondary-cta .btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.service-page .service-secondary-cta .btn-primary:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
+.service-page .service-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.service-page .service-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.service-page .service-content p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.service-page .service-content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+.service-page .service-content ul li {
+  margin-bottom: 10px;
+}
+.service-page {
+  /* Regla para la imagen de héroe (ajustada para que no sea inmensa) */
+}
+.service-page .service-intro .service-hero-image img {
+  max-width: 350px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.service-page {
+  /* SOLUCIÓN: Uniformidad de Fondo y Centrado General */
+  background-color: #fbe2e1;
+  text-align: center; /* Centra TODO el contenido de la página */
+}
+.service-page .service-intro {
+  text-align: center;
+  /* SOLUCIÓN: Botón "Solicita Diagnóstico GRATIS" */
+}
+.service-page .service-intro .btn-diagnostico {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.service-page .service-intro .btn-diagnostico:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
+.service-page .service-intro .btn-diagnostico {
+  margin-top: 20px;
+}
+.service-page {
+  /* SOLUCIÓN DE BOTÓN FALTANTE Y ALINEACIÓN DE DESCARGAR PROGRAMA */
+}
+.service-page .service-secondary-content {
+  /* Fuerza centrado en esta sección y asegura que los elementos sean visibles */
+  text-align: center;
+}
+.service-page .service-secondary-content .btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.service-page .service-secondary-content .btn-primary:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
+.service-page .service-secondary-content .btn-primary {
+  /* Asegura que el botón se muestre como bloque centrado si es necesario */
+  display: inline-block;
+  margin-top: 10px;
+}
+.service-page .service-hero-image img {
+  max-width: 250px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.service-detail {
+  padding: 50px 0;
+  background-color: #fbe2e1;
+}
+.service-detail .container {
+  text-align: center; /* RESTAURACIÓN DE LA CENTRALIDAD DEL TEXTO */
+}
+.service-detail h1 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+.service-detail h2 {
+  font-size: 1.8rem;
+  margin-top: 30px;
+}
+.service-detail h3 {
+  font-size: 1.5rem;
+}
+.service-detail p {
+  max-width: 800px;
+  margin: 0 auto 20px; /* CENTRA PÁRRAFOS */
+}
+.service-detail img {
+  max-width: 400px; /* Tamaño que funciona para esta imagen */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  display: block;
+}
+.service-detail ul {
+  list-style: none;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left; /* Alineación correcta de la lista */
+  padding: 0;
+}
+.service-detail ul li {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.service-detail .cta-section {
+  margin-top: 50px;
+}
+.service-detail .cta-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.service-detail .cta-section form label {
+  font-weight: bold;
+  text-align: left;
+}
+.service-detail .cta-section form input,
+.service-detail .cta-section form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #a3a895;
+  border-radius: 5px;
+}
+.service-detail .cta-section form button {
+  background-color: #11405f;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.service-detail .cta-section form button:hover {
+  background-color: #f6bde1;
+  color: #11405f;
+}
+
+/* * Los estilos principales de testimonios se encuentran en _casos-exito.scss 
+ * (selector .testimonials)
+ */
+
+/*# sourceMappingURL=main.css.map */

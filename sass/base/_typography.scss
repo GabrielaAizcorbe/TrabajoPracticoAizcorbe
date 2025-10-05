@@ -1,0 +1,23 @@
+// Archivo: sass/base/_typography.scss
+
+// IMPORTACIÓN LOCAL DE DEPENDENCIAS
+@use '../utilities/variables' as *; 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-title;
+    color: $main-blue;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: $main-blue;
+
+    &:hover {
+        color: $light-pink;
+    }
+}

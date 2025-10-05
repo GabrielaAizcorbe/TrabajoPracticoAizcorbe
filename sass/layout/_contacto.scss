@@ -1,0 +1,103 @@
+// Archivo: sass/layout/_contacto.scss
+
+@use '../utilities/variables' as *;
+
+.contact-page {
+    padding: 50px 0;
+    background-color: $light-gray;
+    
+    .container {
+        // Usa nesting para organizar la estructura del formulario
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 30px;
+            
+            h1 {
+                font-size: 2.2rem;
+                line-height: 1.2;
+            }
+
+            p {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+
+        .contact-form-container {
+            background-color: $white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 30px auto;
+
+            h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                label {
+                    font-weight: bold;
+                    color: $main-blue;
+                }
+
+                input,
+                textarea,
+                select {
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid $purple-gray;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                }
+
+                button {
+                    background-color: $main-blue;
+                    color: $white;
+                    padding: 12px;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 1.1rem;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: $light-pink;
+                        color: $main-blue;
+                    }
+                }
+            }
+        }
+        
+        .social-contact {
+            text-align: center;
+            margin-top: 50px;
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+            }
+
+            .social-links-contact {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .contact-link {
+                color: $main-blue;
+                font-weight: bold;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: $light-pink;
+                }
+            }
+        }
+    }
+}

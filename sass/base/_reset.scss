@@ -1,0 +1,44 @@
+// Archivo: sass/base/_reset.scss
+
+// SOLUCIÓN: IMPORTACIÓN LOCAL DE DEPENDENCIAS
+@use '../utilities/variables' as *;
+@use '../utilities/mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-body;
+    color: $main-blue;
+    background-color: $white;
+    line-height: 1.6;
+}
+
+// ESTILO UNIVERSAL PARA ANULAR COMPORTAMIENTO DE IMAGEN
+// Aplicamos una regla fuerte a las imágenes con la clase 'service-icon'
+// para asegurar que respeten el tamaño fijo.
+
+img.service-icon {
+    height: 80px; 
+    width: auto;
+    max-width: 80px; 
+}
+
+// Estilo para la frase final de la tarjeta de servicio
+.final-phrase {
+    text-align: center;
+    font-style: italic;
+    margin-top: 40px;
+    font-size: 1.2rem;
+    padding: 0 20px;
+}
+// ANULACIÓN DE BOOTSTRAP/REGLAS GENÉRICAS
+// Esta regla, al estar en el reset, tiene prioridad para definir el tamaño de los íconos.
+img.service-icon {
+    height: 80px; 
+    width: auto;
+    max-width: 80px; /* Esta línea es la clave para que no sean "inmensas" */
+}

@@ -1,0 +1,27 @@
+// Archivo: sass/utilities/_utilities.scss
+
+// IMPORTACIÓN LOCAL DE DEPENDENCIAS
+@use 'mixins'; 
+@use 'variables' as *;
+
+// Estilo de Contenedor General
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+// SOLUCIÓN DE BOTONES: Máxima Especificidad para asegurar la visibilidad
+// Apuntamos al elemento 'a' más la clase, y forzamos propiedades que Bootstrap anula.
+a.btn-diagnostico, 
+a.btn-primary {
+    @include mixins.base-button($light-pink, $main-blue);
+    
+    // Propiedades explícitas para asegurar que el botón se vea
+    display: inline-block; 
+    padding: 10px 20px;
+}
+
+.main-nav .active {
+    border-bottom: 2px solid $main-blue;
+}

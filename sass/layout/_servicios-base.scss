@@ -1,0 +1,47 @@
+// Archivo: sass/layout/_servicios-base.scss
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins'; 
+
+// REGLA PARA UNIFICAR EL FONDO (MÁXIMA FUERZA EN EL SELECTOR)
+.services-page,
+.service-detail { /* APLICAR A AMBOS SELECTORES */
+    padding: 50px 0;
+    background-color: $light-gray !important; /* FORZAMOS EL COLOR ROSA CLARO */
+    
+    // SOLUCIÓN BOTONES: Aplica estilos base a los botones de estas páginas
+    a.btn-diagnostico,
+    a.btn-primary {
+        @include mixins.base-button($light-pink, $main-blue);
+        display: inline-block; 
+        padding: 10px 20px;
+    }
+
+    // REGLA GENERAL DE IMAGEN (PARA QUE EL TAMAÑO NO SE AGIGANTe)
+    img {
+        max-width: 100%; 
+        height: auto;
+        display: block;
+        margin: 30px auto;
+    }
+    
+    // Regla que unifica las imágenes de intro/héroe
+    .service-hero-image {
+        img { 
+            max-width: 350px; /* Tamaño unificado */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 auto 20px;
+        }
+    }
+}
+
+// Estilos para imágenes de contenido
+.service-content img {
+    max-width: 300px; /* Tamaño de imagen de contenido */
+    height: auto;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

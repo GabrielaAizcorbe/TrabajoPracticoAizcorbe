@@ -1,0 +1,40 @@
+// Archivo: sass/layout/_mejora-continua.scss
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins'; 
+
+.service-page {
+    /* SOLUCIÓN: Uniformidad de Fondo y Centrado General */
+    background-color: $light-gray; 
+    text-align: center; /* Centra TODO el contenido de la página */
+
+    .service-intro {
+        text-align: center; 
+
+        /* SOLUCIÓN: Botón "Solicita Diagnóstico GRATIS" */
+        .btn-diagnostico {
+            @include mixins.base-button($light-pink, $main-blue);
+            margin-top: 20px;
+        }
+    }
+
+    /* SOLUCIÓN DE BOTÓN FALTANTE Y ALINEACIÓN DE DESCARGAR PROGRAMA */
+    .service-secondary-content {
+        /* Fuerza centrado en esta sección y asegura que los elementos sean visibles */
+        text-align: center; 
+        
+        .btn-primary {
+            @include mixins.base-button($light-pink, $main-blue);
+            /* Asegura que el botón se muestre como bloque centrado si es necesario */
+            display: inline-block; 
+            margin-top: 10px;
+        }
+    }
+    
+    // Regla para la imagen (ajuste para que no sea minúscula)
+    .service-hero-image img {
+        max-width: 250px; 
+        height: auto;
+        margin: 20px auto;
+    }
+}

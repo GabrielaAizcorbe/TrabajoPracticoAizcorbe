@@ -1,0 +1,92 @@
+// Archivo: sass/layout/_desarrollo-marca.scss
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins'; 
+
+.service-page {
+    /* SOLUCIÓN: Uniformidad de Fondo y Centrado General */
+    background-color: $light-gray; 
+    text-align: center; 
+
+    .service-intro {
+        text-align: center; 
+        margin-bottom: 30px;
+
+        h1 {
+            font-size: 2rem;
+            color: $main-blue;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: $main-blue;
+            font-family: $font-body;
+        }
+
+        /* SOLUCIÓN: Botón "Solicita una conversación..." (.btn-diagnostico) */
+        .btn-diagnostico {
+            @include mixins.base-button($light-pink, $main-blue);
+            margin-top: 20px;
+        }
+    }
+
+    /* SOLUCIÓN: Botón "Ver Programa" y Fondo Blanco del CTA Secundario */
+    .service-secondary-cta {
+        background-color: $white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        margin-bottom: 30px;
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: $main-blue;
+            font-family: $font-body;
+        }
+        
+        .btn-primary {
+            @include mixins.base-button($light-pink, $main-blue);
+        }
+    }
+    
+    .service-content {
+        background-color: $white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            text-align: left;
+            max-width: 800px;
+            margin: 20px auto 0;
+            
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    
+    /* Regla para la imagen de héroe (ajustada para que no sea inmensa) */
+    .service-intro .service-hero-image img {
+        max-width: 350px; 
+        height: auto;
+        margin: 20px auto;
+    }
+}

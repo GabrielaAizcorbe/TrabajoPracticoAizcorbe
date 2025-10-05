@@ -1,0 +1,40 @@
+
+
+// SOLUCIÓN: IMPORTACIÓN LOCAL DE VARIABLES Y MIXINS
+@use '../utilities/variables' as *;
+@use '../utilities/mixins'; 
+
+.main-footer {
+    background-color: $main-blue;
+    color: $white;
+    padding: 20px 0;
+    text-align: center;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // USA EL PREFIJO 'mixins.' para llamar al mixin
+        @include mixins.desktop {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    .social-icons {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+
+        a {
+            color: $white;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $light-pink;
+            }
+        }
+    }
+}

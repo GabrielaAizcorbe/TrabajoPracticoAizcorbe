@@ -1,0 +1,99 @@
+// Archivo: sass/layout/_casos-exito.scss
+
+// SOLUCIÓN: IMPORTACIÓN LOCAL DE VARIABLES Y MIXINS
+@use '../utilities/variables' as *;
+@use '../utilities/mixins'; 
+
+.cases-page {
+    padding: 50px 0;
+    background-color: $light-gray;
+
+    .cases-intro {
+        text-align: center;
+        margin-bottom: 30px;
+
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+
+    .cases-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        
+        // Usa el prefijo mixins. para llamar a tablet
+        @include mixins.tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    .case-card {
+        background-color: $white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+        @include mixins.tablet {
+            flex: 1 1 48%; // Dos tarjetas por fila en tableta
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: $main-blue;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: normal;
+            color: $purple-gray;
+            margin-bottom: 15px;
+        }
+    }
+
+    .cases-cta {
+        text-align: center;
+        margin-top: 50px;
+    }
+}
+
+/* SECCIÓN TESTIMONIOS (Usado en casos-exito o en otras páginas) */
+
+.testimonials {
+    padding: 50px 0;
+    background-color: $white;
+
+    .testimonial-box {
+        text-align: center;
+        font-style: italic;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+    .author {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .more-cases {
+        text-align: center;
+        margin-top: 30px;
+
+        /* CORRECCIÓN: Convierte el enlace en un botón estilizado */
+        a {
+            @include mixins.base-button($light-pink, $main-blue);
+            margin-top: 20px;
+        }
+    }
+}

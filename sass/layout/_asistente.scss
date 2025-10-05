@@ -1,0 +1,98 @@
+// Archivo: sass/layout/_asistente.scss
+
+@use '../utilities/variables' as *;
+@use '../utilities/mixins'; 
+
+.service-detail {
+    padding: 50px 0;
+    background-color: $light-gray; // Fondo uniforme con las demás páginas
+
+    .container {
+        text-align: center; /* RESTAURACIÓN DE LA CENTRALIDAD DEL TEXTO */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-top: 30px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        max-width: 800px;
+        margin: 0 auto 20px; /* CENTRA PÁRRAFOS */
+    }
+
+    img {
+        max-width: 400px; /* Tamaño que funciona para esta imagen */
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin: 30px auto;
+        display: block;
+    }
+
+    ul {
+        list-style: none;
+        max-width: 800px;
+        margin: 20px auto;
+        text-align: left; /* Alineación correcta de la lista */
+        padding: 0;
+
+        li {
+            background-color: $white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    }
+
+    .cta-section {
+        margin-top: 50px;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 20px auto;
+
+            label {
+                font-weight: bold;
+                text-align: left;
+            }
+
+            input, 
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid $purple-gray;
+                border-radius: 5px;
+            }
+
+            button {
+                background-color: $main-blue;
+                color: $white;
+                padding: 12px;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $light-pink;
+                    color: $main-blue;
+                }
+            }
+        }
+    }
+}

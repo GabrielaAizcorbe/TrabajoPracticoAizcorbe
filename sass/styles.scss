@@ -1,0 +1,27 @@
+// Archivo: sass/styles.scss
+
+// ---------------------------------
+// 1. CORE UTILITIES (DEFINICIONES SOLO DEL MANIFIESTO)
+// ---------------------------------
+// Los mixins y variables se cargan LOCALMENTE en cada archivo base/layout
+
+// ---------------------------------
+// 2. BASE: Estilos base y de tipografía
+// ---------------------------------
+@use 'base/reset';
+@use 'base/typography';
+
+// ---------------------------------
+// 3. LAYOUT: Estructura de la web y páginas
+// ---------------------------------
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/home'; 
+@use 'layout/contacto';
+@use 'layout/quien-soy';
+@use 'layout/casos-exito';
+@use 'layout/servicios-base'; 
+@use 'layout/desarrollo-marca'; 
+@use 'layout/mejora-continua'; 
+@use 'layout/asistente'; 
+@use 'layout/testimonios'; 
