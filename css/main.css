@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +28,7 @@ img.service-icon {
 img.service-icon {
   height: 80px;
   width: auto;
-  max-width: 80px; /* Esta línea es la clave para que no sean "inmensas" */
+  max-width: 80px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -178,7 +177,6 @@ a:hover {
   color: #f6bde1;
 }
 
-/* --- HERO SECTION (solo en index.html) --- */
 .hero {
   background-color: #fbe2e1;
   padding: 50px 0;
@@ -222,7 +220,6 @@ a:hover {
   line-height: 1.2;
 }
 
-/* SECCIÓN SERVICIOS (HOME) */
 .services {
   padding: 50px 0;
 }
@@ -245,19 +242,17 @@ a:hover {
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* CENTRADO DE TEXTOS */
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* SOLUCIÓN FINAL: FORZAMOS EL CENTRADO DE ÍCONOS */
-  align-items: center !important;
+  align-items: center;
   height: 100%;
-  /* CORRECCIÓN: TAMAÑO Y POSICIÓN DEL ÍCONO */
 }
 .services-card img.service-icon {
   height: 100px;
   width: auto;
-  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto 20px auto;
 }
 .services-card h2 {
   font-size: 1.5rem;
@@ -266,9 +261,6 @@ a:hover {
 .services-card p {
   font-size: 1rem;
   flex-grow: 1;
-}
-.services-card {
-  /* SOLUCIÓN BOTONES: Estilo para los enlaces "Ver más" (.link-card) */
 }
 .services-card .link-card {
   display: inline-block;
@@ -395,6 +387,25 @@ a:hover {
   max-width: 800px;
   margin: 0 auto 30px;
 }
+.about .cta-button {
+  text-align: center;
+  margin: 30px 0;
+}
+.about .cta-button a.btn-diagnostico {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.about .cta-button a.btn-diagnostico:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
 .about-journey {
   margin-top: 40px;
   text-align: center;
@@ -472,10 +483,6 @@ a:hover {
   background-color: #11405f;
   color: #ffffff;
 }
-.about .cta-button {
-  text-align: center;
-  margin: 30px 0;
-}
 
 .cases-page {
   padding: 50px 0;
@@ -532,8 +539,22 @@ a:hover {
   text-align: center;
   margin-top: 50px;
 }
+.cases-page .cases-cta a.btn-diagnostico {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f6bde1;
+  color: #11405f;
+  border: 2px solid #11405f;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+.cases-page .cases-cta a.btn-diagnostico:hover {
+  background-color: #11405f;
+  color: #f6bde1;
+}
 
-/* SECCIÓN TESTIMONIOS (Usado en casos-exito o en otras páginas) */
 .testimonials {
   padding: 50px 0;
   background-color: #ffffff;
@@ -552,7 +573,6 @@ a:hover {
 .testimonials .more-cases {
   text-align: center;
   margin-top: 30px;
-  /* CORRECCIÓN: Convierte el enlace en un botón estilizado */
 }
 .testimonials .more-cases a {
   display: inline-block;
@@ -574,9 +594,9 @@ a:hover {
 }
 
 .services-page,
-.service-detail { /* APLICAR A AMBOS SELECTORES */
+.service-detail {
   padding: 50px 0;
-  background-color: #fbe2e1 !important; /* FORZAMOS EL COLOR ROSA CLARO */
+  background-color: #fbe2e1 !important;
 }
 .services-page a.btn-diagnostico,
 .services-page a.btn-primary,
@@ -615,7 +635,7 @@ a:hover {
 }
 .services-page .service-hero-image img,
 .service-detail .service-hero-image img {
-  max-width: 350px; /* Tamaño unificado */
+  max-width: 350px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -623,7 +643,7 @@ a:hover {
 }
 
 .service-content img {
-  max-width: 300px; /* Tamaño de imagen de contenido */
+  max-width: 300px;
   height: auto;
   border-radius: 10px;
   margin: 30px auto;
@@ -631,7 +651,6 @@ a:hover {
 }
 
 .service-page {
-  /* SOLUCIÓN: Uniformidad de Fondo y Centrado General */
   background-color: #fbe2e1;
   text-align: center;
 }
@@ -648,9 +667,6 @@ a:hover {
   font-weight: normal;
   color: #11405f;
   font-family: "Montserrat", sans-serif;
-}
-.service-page .service-intro {
-  /* SOLUCIÓN: Botón "Solicita una conversación..." (.btn-diagnostico) */
 }
 .service-page .service-intro .btn-diagnostico {
   display: inline-block;
@@ -669,9 +685,6 @@ a:hover {
 }
 .service-page .service-intro .btn-diagnostico {
   margin-top: 20px;
-}
-.service-page {
-  /* SOLUCIÓN: Botón "Ver Programa" y Fondo Blanco del CTA Secundario */
 }
 .service-page .service-secondary-cta {
   background-color: #ffffff;
@@ -728,9 +741,6 @@ a:hover {
 .service-page .service-content ul li {
   margin-bottom: 10px;
 }
-.service-page {
-  /* Regla para la imagen de héroe (ajustada para que no sea inmensa) */
-}
 .service-page .service-intro .service-hero-image img {
   max-width: 350px;
   height: auto;
@@ -738,13 +748,11 @@ a:hover {
 }
 
 .service-page {
-  /* SOLUCIÓN: Uniformidad de Fondo y Centrado General */
   background-color: #fbe2e1;
-  text-align: center; /* Centra TODO el contenido de la página */
+  text-align: center;
 }
 .service-page .service-intro {
   text-align: center;
-  /* SOLUCIÓN: Botón "Solicita Diagnóstico GRATIS" */
 }
 .service-page .service-intro .btn-diagnostico {
   display: inline-block;
@@ -764,11 +772,7 @@ a:hover {
 .service-page .service-intro .btn-diagnostico {
   margin-top: 20px;
 }
-.service-page {
-  /* SOLUCIÓN DE BOTÓN FALTANTE Y ALINEACIÓN DE DESCARGAR PROGRAMA */
-}
 .service-page .service-secondary-content {
-  /* Fuerza centrado en esta sección y asegura que los elementos sean visibles */
   text-align: center;
 }
 .service-page .service-secondary-content .btn-primary {
@@ -787,7 +791,6 @@ a:hover {
   color: #f6bde1;
 }
 .service-page .service-secondary-content .btn-primary {
-  /* Asegura que el botón se muestre como bloque centrado si es necesario */
   display: inline-block;
   margin-top: 10px;
 }
@@ -802,7 +805,7 @@ a:hover {
   background-color: #fbe2e1;
 }
 .service-detail .container {
-  text-align: center; /* RESTAURACIÓN DE LA CENTRALIDAD DEL TEXTO */
+  text-align: center;
 }
 .service-detail h1 {
   font-size: 2.2rem;
@@ -817,10 +820,10 @@ a:hover {
 }
 .service-detail p {
   max-width: 800px;
-  margin: 0 auto 20px; /* CENTRA PÁRRAFOS */
+  margin: 0 auto 20px;
 }
 .service-detail img {
-  max-width: 400px; /* Tamaño que funciona para esta imagen */
+  max-width: 400px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -831,7 +834,7 @@ a:hover {
   list-style: none;
   max-width: 800px;
   margin: 20px auto;
-  text-align: left; /* Alineación correcta de la lista */
+  text-align: left;
   padding: 0;
 }
 .service-detail ul li {
@@ -876,9 +879,5 @@ a:hover {
   background-color: #f6bde1;
   color: #11405f;
 }
-
-/* * Los estilos principales de testimonios se encuentran en _casos-exito.scss 
- * (selector .testimonials)
- */
 
 /*# sourceMappingURL=main.css.map */

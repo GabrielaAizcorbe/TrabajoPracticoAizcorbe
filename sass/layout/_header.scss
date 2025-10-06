@@ -1,14 +1,8 @@
 // Archivo: sass/layout/_header.scss
 
-// ---------------------------------
-// SOLUCIÓN: IMPORTACIÓN LOCAL DE VARIABLES CON ALIAS GLOBAL
-// ---------------------------------
 @use '../utilities/variables' as *;
-@use '../utilities/mixins'; // Mixins local también para asegurar su uso
+@use '../utilities/mixins';
 
-// ---------------------------------
-// KEYFRAMES: Animación para el Logo
-// ---------------------------------
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -22,11 +16,10 @@
 }
 
 .main-header {
-    background-color: $white; // Esta línea ya no dará error
+    background-color: $white;
     padding: 20px 0;
 
     .container {
-        // ... (resto del código del header, sin cambios) ...
         display: flex;
         flex-direction: column; 
         align-items: center;

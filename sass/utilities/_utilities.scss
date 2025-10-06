@@ -11,13 +11,11 @@
     padding: 0 15px;
 }
 
-// SOLUCIÓN DE BOTONES: Máxima Especificidad para asegurar la visibilidad
-// Apuntamos al elemento 'a' más la clase, y forzamos propiedades que Bootstrap anula.
 a.btn-diagnostico, 
 a.btn-primary {
     @include mixins.base-button($light-pink, $main-blue);
     
-    // Propiedades explícitas para asegurar que el botón se vea
+
     display: inline-block; 
     padding: 10px 20px;
 }

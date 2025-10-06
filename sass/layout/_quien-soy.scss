@@ -1,6 +1,5 @@
 // Archivo: sass/layout/_quien-soy.scss
 
-// SOLUCIÓN: IMPORTACIÓN LOCAL DE VARIABLES Y MIXINS
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
 
@@ -29,6 +28,15 @@
         max-width: 800px;
         margin: 0 auto 30px;
     }
+    
+    .cta-button {
+        text-align: center;
+        margin: 30px 0;
+        
+        a.btn-diagnostico {
+            @include mixins.base-button($light-pink, $main-blue);
+        }
+    }
 
     &-journey {
         margin-top: 40px;
@@ -44,7 +52,6 @@
             flex-direction: column;
             gap: 20px;
 
-            // Usa el prefijo mixins. para llamar a tablet
             @include mixins.tablet {
                 flex-direction: row;
             }
@@ -97,7 +104,6 @@
             flex-direction: column;
             gap: 15px;
 
-            // Usa el prefijo mixins. para llamar a tablet
             @include mixins.tablet {
                 flex-direction: row;
                 justify-content: center;
@@ -118,10 +124,5 @@
                 color: $white;
             }
         }
-    }
-    
-    .cta-button {
-        text-align: center;
-        margin: 30px 0;
     }
 }

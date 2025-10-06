@@ -1,11 +1,8 @@
 // Archivo: sass/layout/_home.scss
 
-// SOLUCIÓN: IMPORTACIÓN LOCAL DE VARIABLES Y MIXINS
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
 
-
-/* --- HERO SECTION (solo en index.html) --- */
 
 .hero {
     background-color: $light-gray;
@@ -41,7 +38,7 @@
         }
     }
     
-    &-text {
+    &-text { 
         
         @include mixins.desktop {
             flex: 1;
@@ -53,8 +50,6 @@
         }
     }
 }
-
-/* SECCIÓN SERVICIOS (HOME) */
 
 .services {
     padding: 50px 0;
@@ -78,32 +73,30 @@
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         
-        /* CENTRADO DE TEXTOS */
         text-align: center; 
         
         display: flex;
         flex-direction: column;
-        /* SOLUCIÓN FINAL: FORZAMOS EL CENTRADO DE ÍCONOS */
-        align-items: center !important; 
+        align-items: center;
         height: 100%;
 
-        /* CORRECCIÓN: TAMAÑO Y POSICIÓN DEL ÍCONO */
         img.service-icon { 
             height: 100px; 
-            width: auto; 
-            margin-bottom: 20px;
+            width: auto;
+            display: block; 
+            margin: 0 auto 20px auto; 
         }
 
         h2 {
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
+        
         p {
             font-size: 1rem;
             flex-grow: 1;
         }
         
-        /* SOLUCIÓN BOTONES: Estilo para los enlaces "Ver más" (.link-card) */
         .link-card {
             @include mixins.base-button($light-pink, $main-blue);
             margin-top: 15px; 

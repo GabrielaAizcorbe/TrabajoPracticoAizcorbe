@@ -1,6 +1,5 @@
-// Archivo: sass/layout/_casos-exito.scss
+// Archivo: sass/layout/_casos-exito.scss (Código optimizado para prolijidad)
 
-// SOLUCIÓN: IMPORTACIÓN LOCAL DE VARIABLES Y MIXINS
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
 
@@ -28,7 +27,6 @@
         flex-direction: column;
         gap: 20px;
         
-        // Usa el prefijo mixins. para llamar a tablet
         @include mixins.tablet {
             flex-direction: row;
             flex-wrap: wrap;
@@ -43,7 +41,7 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
         @include mixins.tablet {
-            flex: 1 1 48%; // Dos tarjetas por fila en tableta
+            flex: 1 1 48%;
         }
 
         h3 {
@@ -64,10 +62,12 @@
     .cases-cta {
         text-align: center;
         margin-top: 50px;
+        
+        a.btn-diagnostico {
+            @include mixins.base-button($light-pink, $main-blue);
+        }
     }
 }
-
-/* SECCIÓN TESTIMONIOS (Usado en casos-exito o en otras páginas) */
 
 .testimonials {
     padding: 50px 0;
@@ -90,7 +90,6 @@
         text-align: center;
         margin-top: 30px;
 
-        /* CORRECCIÓN: Convierte el enlace en un botón estilizado */
         a {
             @include mixins.base-button($light-pink, $main-blue);
             margin-top: 20px;
