@@ -1,5 +1,5 @@
-<html lang="es">
-<head>
+<!DOCTYPE html>
+<html lang="es"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios | G. A. Consultora</title>
@@ -97,18 +97,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <script>
-        // Selecciona el botón de toggle (la hamburguesa)
+        // Selecciono el botón de toggle (la hamburguesa)
         const toggler = document.querySelector('.navbar-toggler');
         
-        // Selecciona todos los enlaces dentro del menú colapsable
+        // Selecciono todos los enlaces dentro del menú colapsable
         const navLinks = document.querySelectorAll('#mainNavbarContent a');
 
         navLinks.forEach(link => {
             // Cuando se hace clic en cualquier enlace
             link.addEventListener('click', () => {
-                // Verifica si el menú está abierto
+                // Verifico si el menú está abierto
                 if (toggler.getAttribute('aria-expanded') === 'true') {
-                    // Cierra el menú al simular un clic en el botón de toggle
+                    // Cierro el menú al simular un clic en el botón de toggle
                     toggler.click(); 
                 }
             });
