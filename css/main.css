@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -61,29 +62,14 @@ a:hover {
   }
 }
 .main-header {
+  /* Usamos las clases de Bootstrap navbar-expand-lg en el HTML */
   background-color: #ffffff;
-  padding: 20px 0;
-}
-.main-header .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-@media (min-width: 1024px) {
-  .main-header .container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+  padding: 10px 0;
+  /* Estilos del logo (se mantienen, pero se adaptan a la estructura Navbar) */
 }
 .main-header .logo-container {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-}
-@media (min-width: 1024px) {
-  .main-header .logo-container {
-    margin-bottom: 0;
-  }
 }
 .main-header .logo-container .logo-img {
   height: 50px;
@@ -96,54 +82,58 @@ a:hover {
   color: #11405f;
   font-family: "Montserrat", sans-serif;
 }
-.main-header .main-nav {
-  width: 100%;
+.main-header {
+  /* ESTILOS DE BOOTSTRAP NAVBAR PARA EL TOGGLER Y EL MENÚ */
+  /* Personalización del icono de hamburguesa (para que sea color $main-blue) */
+}
+.main-header .navbar-toggler {
+  border-color: #11405f;
+}
+.main-header .navbar-toggler-icon {
+  /* Usa SVG data para cambiar el color del icono a $main-blue */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2311405f' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+.main-header {
+  /* Contenedor principal de la navegación */
+}
+.main-header .main-nav ul.navbar-nav {
+  /* Estilos generales para todos los enlaces del menú */
+}
+.main-header .main-nav ul.navbar-nav .nav-link, .main-header .main-nav ul.navbar-nav .dropdown-item {
+  color: #11405f !important;
+  font-weight: bold;
+  text-align: center; /* Centra el texto del menú cuando está colapsado */
+}
+.main-header .main-nav ul.navbar-nav .nav-link:hover, .main-header .main-nav ul.navbar-nav .dropdown-item:hover {
+  color: #f6bde1 !important;
+}
+.main-header .main-nav ul.navbar-nav {
+  /* Estilos del Submenú Desplegable de Bootstrap */
+}
+.main-header .main-nav ul.navbar-nav .dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #fbe2e1;
+  /* Asegura que el submenú se vea bien en móvil */
+}
+@media (min-width: 768px) {
+  .main-header .main-nav ul.navbar-nav .dropdown-menu {
+    text-align: left; /* Alinea los ítems a la izquierda en pantalla grande */
+  }
+}
+.main-header .main-nav ul.navbar-nav .active {
+  /* Estilo para el ítem activo */
+  border-bottom: 2px solid #11405f;
+}
+.main-header {
+  /* Esconde la navegación tradicional en móvil (aunque Bootstrap ya lo hace) */
 }
 @media (min-width: 1024px) {
   .main-header .main-nav {
     width: auto;
   }
-}
-.main-header .main-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0;
-}
-.main-header .main-nav ul li {
-  flex-basis: auto;
-  margin: 0 5px;
-  text-align: center;
-  position: relative;
-}
-.main-header .main-nav ul li a {
-  display: block;
-  padding: 10px 15px;
-  font-weight: bold;
-  color: #11405f;
-}
-.main-header .main-nav ul li ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  flex-direction: column;
-}
-.main-header .main-nav ul li ul li {
-  width: 250px;
-  flex-basis: 100%;
-  text-align: left;
-  margin: 0;
-}
-.main-header .main-nav ul li ul li a {
-  padding: 10px 20px;
-}
-.main-header .main-nav ul li:hover > ul {
-  display: block;
+  .main-header .logo-container {
+    margin-bottom: 0;
+  }
 }
 
 .main-footer {

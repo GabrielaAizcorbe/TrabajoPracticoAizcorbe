@@ -4,40 +4,20 @@
 @use '../utilities/mixins';
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .main-header {
+    /* Usamos las clases de Bootstrap navbar-expand-lg en el HTML */
     background-color: $white;
-    padding: 20px 0;
+    padding: 10px 0; 
 
-    .container {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-
-        @include mixins.desktop {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-    }
-
+    /* Estilos del logo (se mantienen, pero se adaptan a la estructura Navbar) */
     .logo-container {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
-
-        @include mixins.desktop {
-            margin-bottom: 0;
-        }
 
         .logo-img {
             height: 50px;
@@ -53,59 +33,58 @@
         }
     }
 
+    /* ESTILOS DE BOOTSTRAP NAVBAR PARA EL TOGGLER Y EL MENÚ */
+    
+    /* Personalización del icono de hamburguesa (para que sea color $main-blue) */
+    .navbar-toggler {
+        border-color: $main-blue;
+    }
+    
+    .navbar-toggler-icon {
+        /* Usa SVG data para cambiar el color del icono a $main-blue */
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2311405f' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    }
+    
+    /* Contenedor principal de la navegación */
     .main-nav {
-        width: 100%; 
-        
-        @include mixins.desktop {
-            width: auto;
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: center;
-            padding: 0; 
+        ul.navbar-nav {
             
-            li {
-                flex-basis: auto;
-                margin: 0 5px; 
-                text-align: center; 
-                position: relative;
-
-                a {
-                    display: block;
-                    padding: 10px 15px;
-                    font-weight: bold;
-                    color: $main-blue;
-                }
-
-                ul {
-                    display: none;
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    background-color: $white;
-                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                    z-index: 100;
-                    flex-direction: column; 
-
-                    li {
-                        width: 250px;
-                        flex-basis: 100%; 
-                        text-align: left; 
-                        margin: 0;
-
-                        a {
-                            padding: 10px 20px;
-                        }
-                    }
-                }
+            /* Estilos generales para todos los enlaces del menú */
+            .nav-link, .dropdown-item {
+                color: $main-blue !important;
+                font-weight: bold;
+                text-align: center; /* Centra el texto del menú cuando está colapsado */
                 
-                &:hover > ul {
-                    display: block;
+                &:hover {
+                    color: $light-pink !important;
                 }
             }
+            
+            /* Estilos del Submenú Desplegable de Bootstrap */
+            .dropdown-menu {
+                background-color: $white;
+                border: 1px solid $light-gray;
+                
+                /* Asegura que el submenú se vea bien en móvil */
+                @include mixins.tablet {
+                    text-align: left; /* Alinea los ítems a la izquierda en pantalla grande */
+                }
+            }
+
+            .active {
+                /* Estilo para el ítem activo */
+                border-bottom: 2px solid $main-blue;
+            }
+        }
+    }
+    
+    /* Esconde la navegación tradicional en móvil (aunque Bootstrap ya lo hace) */
+    @include mixins.desktop {
+        .main-nav {
+            width: auto;
+        }
+        .logo-container {
+            margin-bottom: 0;
         }
     }
 }

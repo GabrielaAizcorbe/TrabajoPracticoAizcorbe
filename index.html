@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,31 +12,44 @@
 
 <body>
 
-
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html" class="logo-container">
+    <header class="navbar navbar-expand-lg main-header">
+        <div class="container-fluid container">
+            
+            <a href="index.html" class="navbar-brand logo-container">
                 <img src="./img/logorosayazul.png" alt="Logo G. A. Consultora" class="logo-img">
                 <span class="logo-text">G. A. Consultora</span>
             </a>
             
-            <nav class="main-nav" id="main-nav">
-              <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="./page/quien-soy.html">Quién Soy</a></li>
-                <li><a href="./page/servicios.html">Servicios</a>
-                   <ul>
-                    <li><a href="./page/desarrollo-marca.html">Desarrollo de Marca, Productos y Servicios</a></li>
-                    <li><a href="./page/mejora-continua.html">Mejora Continua</a></li>
-                    <li><a href="./page/asistente-administrativo.html">Asistente Administrativo</a></li>
-                </ul>
-            </li>
-            <li><a href="./page/casos-de-exito.html">Casos de Éxito</a></li>
-            <li><a href="./page/contacto.html">Contacto</a></li>
-        </ul>
-   </nav>
-      </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNavbarContent">
+                
+                <nav class="main-nav navbar-nav" id="main-nav">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                        <li><a href="./page/quien-soy.html" class="nav-link">Quién Soy</a></li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./page/servicios.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Servicios
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./page/desarrollo-marca.html">Desarrollo de Marca, Productos y Servicios</a></li>
+                                <li><a class="dropdown-item" href="./page/mejora-continua.html">Mejora Continua</a></li>
+                                <li><a class="dropdown-item" href="./page/asistente-administrativo.html">Asistente Administrativo</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./page/casos-de-exito.html" class="nav-link">Casos de Éxito</a></li>
+                        <li><a href="./page/contacto.html" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+        </div>
     </header>
+
 
     <main>
         <section class="hero">
@@ -57,24 +68,21 @@
       <div class="container">
         <div class="services-container">
 
-            <div class="service-card text-center"> 
-                <img src="./img/lapicera.jpg" alt="Icono de Desarrollo de Marca" class="service-icon">
+            <div class="service-card text-center"> <img src="./img/lapicera.jpg" alt="Icono de Desarrollo de Marca" class="service-icon">
                 <h2>Desarrollo de Marca, Productos y Servicios</h2>
                 <h3>Creación y fortalecimiento de marcas.</h3>
                 <p>Identidad visual con propósito.</p>
                 <a href="./page/desarrollo-marca.html" class="link-card">Ver más</a>
             </div>
 
-            <div class="service-card text-center"> 
-                <img src="./img/mejoracontinua.jpg" alt="Icono de Mejora Continua" class="service-icon">
+            <div class="service-card text-center"> <img src="./img/mejoracontinua.jpg" alt="Icono de Mejora Continua" class="service-icon">
                 <h2>Programa de Mejora Continua</h2>
                 <h3>Para equipos que buscan orden, eficiencia y bienestar</h3>
                 <p>Optimización de procesos, mejora de la productividad y el ambiente laboral.</p>
                 <a href="./page/mejora-continua.html" class="link-card">Ver más</a>
             </div>
 
-            <div class="service-card text-center"> 
-                <img src="./img/asistente.jpg" alt="Icono de Asistencia Administrativa" class="service-icon">
+            <div class="service-card text-center"> <img src="./img/asistente.jpg" alt="Icono de Asistencia Administrativa" class="service-icon">
                 <h2>Asistencia Administrativa Virtual</h2>
                 <h3>Para emprendedores y profesionales que no pueden hacerlo todo</h3>
                 <p>Soporte remoto y gestión ágil.</p>
