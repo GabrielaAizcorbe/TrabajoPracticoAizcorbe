@@ -1,4 +1,4 @@
-// Archivo: sass/layout/_mejora-continua.scss
+// Archivo: sass/layout/_mejora-continua.scss (LIMPIEZA DE REDUNDANCIAS)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
@@ -10,8 +10,8 @@
     .service-intro {
         text-align: center; 
 
+        /* CORRECCIÓN: Dejamos SOLO el margen específico, el estilo completo viene del mixin base */
         .btn-diagnostico {
-            @include mixins.base-button($light-pink, $main-blue);
             margin-top: 20px;
         }
     }
@@ -19,14 +19,14 @@
     .service-secondary-content {
         text-align: center; 
         
+        /* CORRECCIÓN: Dejamos SOLO el margen específico */
         .btn-primary {
-            @include mixins.base-button($light-pink, $main-blue);
-            display: inline-block; 
             margin-top: 10px;
         }
     }
     
     .service-hero-image img {
+        /* CORRECCIÓN: Dejamos las reglas de tamaño y centrado específicas de esta imagen */
         max-width: 250px; 
         height: auto;
         margin: 20px auto;

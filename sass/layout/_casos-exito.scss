@@ -1,4 +1,4 @@
-// Archivo: sass/layout/_casos-exito.scss (Código optimizado para prolijidad)
+// Archivo: sass/layout/_casos-exito.scss (Optimizado para prolijidad)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
@@ -38,19 +38,19 @@
         background-color: $white;
         padding: 30px;
         border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
         @include mixins.tablet {
             flex: 1 1 48%;
         }
 
-        h3 {
+        h2 { /* Jerarquía corregida */
             font-size: 1.5rem;
             margin-bottom: 5px;
             color: $main-blue;
         }
-
-        h4 {
+        
+        h3 { /* Subtítulo del servicio */
             font-size: 1rem;
             font-style: italic;
             font-weight: normal;

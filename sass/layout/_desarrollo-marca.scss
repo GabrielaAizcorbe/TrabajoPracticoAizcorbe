@@ -1,4 +1,4 @@
-// Archivo: sass/layout/_desarrollo-marca.scss
+// Archivo: sass/layout/_desarrollo-marca.scss (LIMPIEZA DE REDUNDANCIAS)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
@@ -23,8 +23,8 @@
             font-family: $font-body;
         }
 
+        /* CORRECCIÓN: Dejamos SOLO el margen, el estilo completo viene de .btn-diagnostico */
         .btn-diagnostico {
-            @include mixins.base-button($light-pink, $main-blue);
             margin-top: 20px;
         }
     }
@@ -44,9 +44,8 @@
             font-family: $font-body;
         }
         
-        .btn-primary {
-            @include mixins.base-button($light-pink, $main-blue);
-        }
+        /* CORRECCIÓN: Eliminamos la llamada al mixin; el estilo base viene de .btn-primary */
+        /* Dejamos el selector aquí, pero sin contenido, para que herede de _utilities.scss */
     }
     
     .service-content {

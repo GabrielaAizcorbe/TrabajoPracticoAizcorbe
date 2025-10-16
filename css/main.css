@@ -513,12 +513,12 @@ a:hover {
     flex: 1 1 48%;
   }
 }
-.cases-page .case-card h3 {
+.cases-page .case-card h2 { /* Jerarquía corregida */
   font-size: 1.5rem;
   margin-bottom: 5px;
   color: #11405f;
 }
-.cases-page .case-card h4 {
+.cases-page .case-card h3 { /* Subtítulo del servicio */
   font-size: 1rem;
   font-style: italic;
   font-weight: normal;
@@ -583,38 +583,15 @@ a:hover {
   margin-top: 20px;
 }
 
+/* * Este selector unificado define los estilos base para la página de servicios
+ * y las páginas de detalle.
+ */
 .services-page,
 .service-detail {
   padding: 50px 0;
-  background-color: #fbe2e1 !important;
-}
-.services-page a.btn-diagnostico,
-.services-page a.btn-primary,
-.service-detail a.btn-diagnostico,
-.service-detail a.btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f6bde1;
-  color: #11405f;
-  border: 2px solid #11405f;
-  border-radius: 5px;
+  background-color: #fbe2e1 !important; /* Mantengo el color rosa claro uniforme */
   text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-.services-page a.btn-diagnostico:hover,
-.services-page a.btn-primary:hover,
-.service-detail a.btn-diagnostico:hover,
-.service-detail a.btn-primary:hover {
-  background-color: #11405f;
-  color: #f6bde1;
-}
-.services-page a.btn-diagnostico,
-.services-page a.btn-primary,
-.service-detail a.btn-diagnostico,
-.service-detail a.btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
+  /* Nota: Todos los estilos de botón se heredan de _utilities.scss */
 }
 .services-page img,
 .service-detail img {
@@ -658,20 +635,8 @@ a:hover {
   color: #11405f;
   font-family: "Montserrat", sans-serif;
 }
-.service-page .service-intro .btn-diagnostico {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f6bde1;
-  color: #11405f;
-  border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-.service-page .service-intro .btn-diagnostico:hover {
-  background-color: #11405f;
-  color: #f6bde1;
+.service-page .service-intro {
+  /* CORRECCIÓN: Dejo SOLO el margen, el estilo completo viene de .btn-diagnostico */
 }
 .service-page .service-intro .btn-diagnostico {
   margin-top: 20px;
@@ -690,20 +655,9 @@ a:hover {
   color: #11405f;
   font-family: "Montserrat", sans-serif;
 }
-.service-page .service-secondary-cta .btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f6bde1;
-  color: #11405f;
-  border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-.service-page .service-secondary-cta .btn-primary:hover {
-  background-color: #11405f;
-  color: #f6bde1;
+.service-page .service-secondary-cta {
+  /* CORRECCIÓN: Elimino la llamada al mixin; el estilo base viene de .btn-primary */
+  /* Dejo el selector aquí, pero sin contenido, para que herede de _utilities.scss */
 }
 .service-page .service-content {
   background-color: #ffffff;
@@ -743,48 +697,20 @@ a:hover {
 }
 .service-page .service-intro {
   text-align: center;
-}
-.service-page .service-intro .btn-diagnostico {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f6bde1;
-  color: #11405f;
-  border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-.service-page .service-intro .btn-diagnostico:hover {
-  background-color: #11405f;
-  color: #f6bde1;
+  /* CORRECCIÓN: Dejo SOLO el margen específico, el estilo completo viene del mixin base */
 }
 .service-page .service-intro .btn-diagnostico {
   margin-top: 20px;
 }
 .service-page .service-secondary-content {
   text-align: center;
+  /* CORRECCIÓN: Dejo SOLO el margen específico */
 }
 .service-page .service-secondary-content .btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #f6bde1;
-  color: #11405f;
-  border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-}
-.service-page .service-secondary-content .btn-primary:hover {
-  background-color: #11405f;
-  color: #f6bde1;
-}
-.service-page .service-secondary-content .btn-primary {
-  display: inline-block;
   margin-top: 10px;
 }
 .service-page .service-hero-image img {
+  /* CORRECCIÓN: Dejo las reglas de tamaño y centrado específicas de esta imagen */
   max-width: 250px;
   height: auto;
   margin: 20px auto;

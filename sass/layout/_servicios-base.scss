@@ -1,19 +1,18 @@
-// Archivo: sass/layout/_servicios-base.scss
+// Archivo: sass/layout/_servicios-base.scss (Limpieza de redundancias)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
 
+/* * Este selector unificado define los estilos base para la página de servicios
+ * y las páginas de detalle.
+ */
 .services-page,
 .service-detail {
     padding: 50px 0;
-    background-color: $light-gray !important;
+    background-color: $light-gray !important; /* Mantenemos el color rosa claro uniforme */
+    text-align: center;
     
-    a.btn-diagnostico,
-    a.btn-primary {
-        @include mixins.base-button($light-pink, $main-blue);
-        display: inline-block; 
-        padding: 10px 20px;
-    }
+    /* Nota: Todos los estilos de botón se heredan de _utilities.scss */
 
     img {
         max-width: 100%; 
@@ -33,11 +32,11 @@
     }
 }
 
-// Estilos para imágenes de contenido
+// Estilos específicos para la imagen de contenido (no hero)
 .service-content img {
     max-width: 300px;
     height: auto;
     border-radius: 10px;
     margin: 30px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
