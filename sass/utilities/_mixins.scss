@@ -1,23 +1,19 @@
+// Archivo: sass/utilities/_mixins.scss (CONSOLIDACIÓN FINAL)
 
-// Mixin para estilos de botón
-@mixin base-button($padding, $border-radius, $bg-color) {
-    display: inline-block;
-    padding: $padding;
-    border-radius: $border-radius;
-    color: white;
-    background-color: $bg-color;
-}
-
+// Mixin para estilos de botón (SOLO UNA DEFINICIÓN)
 @mixin base-button($bg-color, $text-color) {
-    display: inline-block;
-    padding: 10px 20px;
+    /* Propiedades de visualización que solucionan el conflicto de Bootstrap */
+    display: inline-block; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    text-align: center;
+    text-decoration: none;
+
+    /* Propiedades de color y transición */
     background-color: $bg-color;
     color: $text-color;
     border: 2px solid $text-color;
-    border-radius: 5px;
-    text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none; // Asegura que el enlace no tenga subrayado
 
     &:hover {
         background-color: $text-color;
@@ -25,7 +21,7 @@
     }
 }
 
-// Mixin para Media Queries (para evitar repetir @media)
+// Mixin para Media Queries
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1024px;
 
@@ -39,4 +35,11 @@ $desktop-breakpoint: 1024px;
     @media (min-width: $desktop-breakpoint) {
         @content;
     }
+}
+
+// Keyframes de Animación
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }

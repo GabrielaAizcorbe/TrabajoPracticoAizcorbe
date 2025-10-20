@@ -1,4 +1,4 @@
-// Archivo: sass/layout/_header.scss
+// Archivo: sass/layout/_header.scss (LIMPIEZA FINAL Y CONSOLIDACIÓN)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins';
@@ -10,14 +10,22 @@
 }
 
 .main-header {
-    /* Usamos las clases de Bootstrap navbar-expand-lg en el HTML */
     background-color: $white;
     padding: 10px 0; 
 
-    /* Estilos del logo (se mantienen, pero se adaptan a la estructura Navbar) */
-    .logo-container {
-        display: flex;
-        align-items: center;
+    /* CONSOLIDACIÓN: Estilos del Contenedor Principal */
+    /* Dejamos solo los estilos base que no rompen Flexbox, quitando la forzada 'column' */
+    .container-fluid.container { 
+        display: flex; 
+        /* Eliminamos flex-direction: column y align-items: center de la vista base */
+    }
+
+    /* *** CORRECCIÓN CRÍTICA ***: APUNTAMOS A .navbar-brand Y FORZAMOS LAS REGLAS */
+    .navbar-brand { 
+        display: flex !important; /* FORZAMOS Flexbox */
+        align-items: center !important; /* FORZAMOS alineación vertical */
+        width: 100%; /* Aseguramos que el logo ocupe el espacio completo para centrar en móvil */
+        justify-content: center !important; /* FORZAMOS Centrado en móvil */
 
         .logo-img {
             height: 50px;
@@ -33,19 +41,16 @@
         }
     }
 
-    /* ESTILOS DE BOOTSTRAP NAVBAR PARA EL TOGGLER Y EL MENÚ */
-    
-    /* Personalización del icono de hamburguesa (para que sea color $main-blue) */
+    /* ESTILOS DE BOOTSTRAP TOGGLER */
     .navbar-toggler {
         border-color: $main-blue;
     }
     
     .navbar-toggler-icon {
-        /* Usa SVG data para cambiar el color del icono a $main-blue */
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2311405f' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
     }
     
-    /* Contenedor principal de la navegación */
+    /* CONTENEDOR DE NAVEGACIÓN (main-nav) */
     .main-nav {
         ul.navbar-nav {
             
@@ -53,38 +58,47 @@
             .nav-link, .dropdown-item {
                 color: $main-blue !important;
                 font-weight: bold;
-                text-align: center; /* Centra el texto del menú cuando está colapsado */
+                text-align: center; 
                 
                 &:hover {
                     color: $light-pink !important;
                 }
             }
             
-            /* Estilos del Submenú Desplegable de Bootstrap */
+            /* Estilos del Submenú Desplegable */
             .dropdown-menu {
                 background-color: $white;
                 border: 1px solid $light-gray;
-                
-                /* Asegura que el submenú se vea bien en móvil */
-                @include mixins.tablet {
-                    text-align: left; /* Alinea los ítems a la izquierda en pantalla grande */
-                }
             }
 
             .active {
-                /* Estilo para el ítem activo */
                 border-bottom: 2px solid $main-blue;
             }
         }
     }
     
-    /* Esconde la navegación tradicional en móvil (aunque Bootstrap ya lo hace) */
+    /* MEDIA QUERIES FINALES (CONSOLIDACIÓN DE REGLAS DE ESCRITORIO) */
     @include mixins.desktop {
+        /* En escritorio, forzamos la disposición horizontal de Bootstrap */
+        .container-fluid.container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* CORRECCIÓN: Usamos .navbar-brand para escritorio */
+        .navbar-brand {
+            margin-bottom: 0 !important;
+            width: auto !important;
+            justify-content: flex-start !important;
+        }
+        
         .main-nav {
             width: auto;
         }
-        .logo-container {
-            margin-bottom: 0;
+        
+        .main-nav ul.navbar-nav .dropdown-menu {
+            text-align: left;
         }
     }
 }

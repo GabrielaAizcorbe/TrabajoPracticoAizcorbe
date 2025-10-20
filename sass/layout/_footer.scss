@@ -1,4 +1,4 @@
-// Archivo: sass/layout/_footer.scss
+// Archivo: sass/layout/_footer.scss (VERIFICACIÓN Y LIMPIEZA FINAL)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
@@ -25,7 +25,6 @@
         display: flex;
         gap: 20px;
         margin-bottom: 15px;
-        
 
         a {
             color: $white;

@@ -1,4 +1,4 @@
-// Archivo: sass/layout/_servicios-base.scss (Limpieza de redundancias)
+// Archivo: sass/layout/_servicios-base.scss (Limpieza de redundancias y errores)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
@@ -39,4 +39,22 @@
     border-radius: 10px;
     margin: 30px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} 
+
+/* ----------------------------------------------------- */
+/* CORRECCIÓN DE ERRORES PENDIENTES (Líneas 751 y 771)  */
+/* Se añaden selectores vacíos con 'content: ""' para   */
+/* que el compilador los acepte sin generar reglas CSS.  */
+/* ----------------------------------------------------- */
+
+.service-page .service-intro { 
+    /* CORRECCIÓN: Dejamos SOLO el margen, el estilo completo viene de .btn-diagnostico. */
+    /* El selector se dejó vacío para heredar. Le damos un contenido mínimo. */
+    content: ""; 
+}
+
+.service-page .service-secondary-cta { 
+    /* CORRECCIÓN: Eliminamos la llamada al mixin; el estilo base viene de .btn-primary. */
+    /* Dejamos el selector aquí, pero sin contenido, para que herede de _utilities.scss. */
+    content: "";
 }

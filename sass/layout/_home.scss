@@ -1,8 +1,10 @@
-// Archivo: sass/layout/_home.scss
+// Archivo: sass/layout/_home.scss (LIMPIEZA FINAL Y CONSOLIDACIÓN)
 
 @use '../utilities/variables' as *;
 @use '../utilities/mixins'; 
 
+
+/* --- HERO SECTION (solo en index.html) --- */
 
 .hero {
     background-color: $light-gray;
@@ -13,43 +15,47 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        
-        @include mixins.desktop {
-            flex-direction: row;
-            text-align: left;
-            align-items: center;
-        }
     }
 
     &-image {
-        max-width: 100%;
+        max-width: 350px; 
+        width: 100%; 
         height: auto;
         margin-bottom: 20px;
         
-        @include mixins.desktop {
-            flex: 1;
-            margin-right: 40px;
-        }
-
         img {
-            max-width: 100%;
+            max-width: 100%; 
             height: auto;
-            margin-bottom: 20px;
+            display: block;
         }
     }
     
     &-text { 
-        
-        @include mixins.desktop {
-            flex: 1;
-        }
-        
         h1 {
             font-size: 2.5rem;
             line-height: 1.2;
         }
     }
+    
+    /* MEDIA QUERIES CONSOLIDADAS DE HERO */
+    @include mixins.desktop {
+        .container {
+            flex-direction: row;
+            text-align: left;
+            align-items: center;
+        }
+        &-image {
+            max-width: none; 
+            flex: 1;
+            margin-right: 40px;
+        }
+        &-text { 
+            flex: 1;
+        }
+    }
 }
+
+/* SECCIÓN SERVICIOS (HOME) */
 
 .services {
     padding: 50px 0;

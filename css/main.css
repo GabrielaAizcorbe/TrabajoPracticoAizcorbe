@@ -1,4 +1,15 @@
 @charset "UTF-8";
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -62,39 +73,46 @@ a:hover {
   }
 }
 .main-header {
-  /* Usamos las clases de Bootstrap navbar-expand-lg en el HTML */
   background-color: #ffffff;
   padding: 10px 0;
-  /* Estilos del logo (se mantienen, pero se adaptan a la estructura Navbar) */
+  /* CONSOLIDACIÓN: Estilos del Contenedor Principal */
+  /* Dejamos solo los estilos base que no rompen Flexbox, quitando la forzada 'column' */
 }
-.main-header .logo-container {
+.main-header .container-fluid.container {
   display: flex;
-  align-items: center;
+  /* Eliminamos flex-direction: column y align-items: center de la vista base */
 }
-.main-header .logo-container .logo-img {
+.main-header {
+  /* *** CORRECCIÓN CRÍTICA ***: APUNTAMOS A .navbar-brand Y FORZAMOS LAS REGLAS */
+}
+.main-header .navbar-brand {
+  display: flex !important; /* FORZAMOS Flexbox */
+  align-items: center !important; /* FORZAMOS alineación vertical */
+  width: 100%; /* Aseguramos que el logo ocupe el espacio completo para centrar en móvil */
+  justify-content: center !important; /* FORZAMOS Centrado en móvil */
+}
+.main-header .navbar-brand .logo-img {
   height: 50px;
   margin-right: 10px;
   animation: pulse 4s infinite ease-in-out;
 }
-.main-header .logo-container .logo-text {
+.main-header .navbar-brand .logo-text {
   font-size: 24px;
   font-weight: bold;
   color: #11405f;
   font-family: "Montserrat", sans-serif;
 }
 .main-header {
-  /* ESTILOS DE BOOTSTRAP NAVBAR PARA EL TOGGLER Y EL MENÚ */
-  /* Personalización del icono de hamburguesa (para que sea color $main-blue) */
+  /* ESTILOS DE BOOTSTRAP TOGGLER */
 }
 .main-header .navbar-toggler {
   border-color: #11405f;
 }
 .main-header .navbar-toggler-icon {
-  /* Usa SVG data para cambiar el color del icono a $main-blue */
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2311405f' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
 .main-header {
-  /* Contenedor principal de la navegación */
+  /* CONTENEDOR DE NAVEGACIÓN (main-nav) */
 }
 .main-header .main-nav ul.navbar-nav {
   /* Estilos generales para todos los enlaces del menú */
@@ -102,37 +120,46 @@ a:hover {
 .main-header .main-nav ul.navbar-nav .nav-link, .main-header .main-nav ul.navbar-nav .dropdown-item {
   color: #11405f !important;
   font-weight: bold;
-  text-align: center; /* Centra el texto del menú cuando está colapsado */
+  text-align: center;
 }
 .main-header .main-nav ul.navbar-nav .nav-link:hover, .main-header .main-nav ul.navbar-nav .dropdown-item:hover {
   color: #f6bde1 !important;
 }
 .main-header .main-nav ul.navbar-nav {
-  /* Estilos del Submenú Desplegable de Bootstrap */
+  /* Estilos del Submenú Desplegable */
 }
 .main-header .main-nav ul.navbar-nav .dropdown-menu {
   background-color: #ffffff;
   border: 1px solid #fbe2e1;
-  /* Asegura que el submenú se vea bien en móvil */
-}
-@media (min-width: 768px) {
-  .main-header .main-nav ul.navbar-nav .dropdown-menu {
-    text-align: left; /* Alinea los ítems a la izquierda en pantalla grande */
-  }
 }
 .main-header .main-nav ul.navbar-nav .active {
-  /* Estilo para el ítem activo */
   border-bottom: 2px solid #11405f;
 }
 .main-header {
-  /* Esconde la navegación tradicional en móvil (aunque Bootstrap ya lo hace) */
+  /* MEDIA QUERIES FINALES (CONSOLIDACIÓN DE REGLAS DE ESCRITORIO) */
 }
 @media (min-width: 1024px) {
+  .main-header {
+    /* En escritorio, forzamos la disposición horizontal de Bootstrap */
+  }
+  .main-header .container-fluid.container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-header {
+    /* CORRECCIÓN: Usamos .navbar-brand para escritorio */
+  }
+  .main-header .navbar-brand {
+    margin-bottom: 0 !important;
+    width: auto !important;
+    justify-content: flex-start !important;
+  }
   .main-header .main-nav {
     width: auto;
   }
-  .main-header .logo-container {
-    margin-bottom: 0;
+  .main-header .main-nav ul.navbar-nav .dropdown-menu {
+    text-align: left;
   }
 }
 
@@ -167,6 +194,7 @@ a:hover {
   color: #f6bde1;
 }
 
+/* --- HERO SECTION (solo en index.html) --- */
 .hero {
   background-color: #fbe2e1;
   padding: 50px 0;
@@ -177,39 +205,41 @@ a:hover {
   align-items: center;
   text-align: center;
 }
+.hero-image {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.hero-text h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+.hero {
+  /* MEDIA QUERIES CONSOLIDADAS DE HERO */
+}
 @media (min-width: 1024px) {
   .hero .container {
     flex-direction: row;
     text-align: left;
     align-items: center;
   }
-}
-.hero-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-@media (min-width: 1024px) {
   .hero-image {
+    max-width: none;
     flex: 1;
     margin-right: 40px;
   }
-}
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-@media (min-width: 1024px) {
   .hero-text {
     flex: 1;
   }
 }
-.hero-text h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-}
 
+/* SECCIÓN SERVICIOS (HOME) */
 .services {
   padding: 50px 0;
 }
@@ -253,15 +283,17 @@ a:hover {
   flex-grow: 1;
 }
 .services-card .link-card {
+  /* Propiedades de visualización que solucionan el conflicto de Bootstrap */
   display: inline-block;
   padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  /* Propiedades de color y transición */
   background-color: #f6bde1;
   color: #11405f;
   border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
 }
 .services-card .link-card:hover {
   background-color: #11405f;
@@ -382,15 +414,17 @@ a:hover {
   margin: 30px 0;
 }
 .about .cta-button a.btn-diagnostico {
+  /* Propiedades de visualización que solucionan el conflicto de Bootstrap */
   display: inline-block;
   padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  /* Propiedades de color y transición */
   background-color: #f6bde1;
   color: #11405f;
   border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
 }
 .about .cta-button a.btn-diagnostico:hover {
   background-color: #11405f;
@@ -530,15 +564,17 @@ a:hover {
   margin-top: 50px;
 }
 .cases-page .cases-cta a.btn-diagnostico {
+  /* Propiedades de visualización que solucionan el conflicto de Bootstrap */
   display: inline-block;
   padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  /* Propiedades de color y transición */
   background-color: #f6bde1;
   color: #11405f;
   border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
 }
 .cases-page .cases-cta a.btn-diagnostico:hover {
   background-color: #11405f;
@@ -565,15 +601,17 @@ a:hover {
   margin-top: 30px;
 }
 .testimonials .more-cases a {
+  /* Propiedades de visualización que solucionan el conflicto de Bootstrap */
   display: inline-block;
   padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  /* Propiedades de color y transición */
   background-color: #f6bde1;
   color: #11405f;
   border: 2px solid #11405f;
-  border-radius: 5px;
-  text-align: center;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
 }
 .testimonials .more-cases a:hover {
   background-color: #11405f;
@@ -589,7 +627,7 @@ a:hover {
 .services-page,
 .service-detail {
   padding: 50px 0;
-  background-color: #fbe2e1 !important; /* Mantengo el color rosa claro uniforme */
+  background-color: #fbe2e1 !important; /* Mantenemos el color rosa claro uniforme */
   text-align: center;
   /* Nota: Todos los estilos de botón se heredan de _utilities.scss */
 }
@@ -617,6 +655,23 @@ a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* ----------------------------------------------------- */
+/* CORRECCIÓN DE ERRORES PENDIENTES (Líneas 751 y 771)  */
+/* Se añaden selectores vacíos con 'content: ""' para   */
+/* que el compilador los acepte sin generar reglas CSS.  */
+/* ----------------------------------------------------- */
+.service-page .service-intro {
+  /* CORRECCIÓN: Dejamos SOLO el margen, el estilo completo viene de .btn-diagnostico. */
+  /* El selector se dejó vacío para heredar. Le damos un contenido mínimo. */
+  content: "";
+}
+
+.service-page .service-secondary-cta {
+  /* CORRECCIÓN: Eliminamos la llamada al mixin; el estilo base viene de .btn-primary. */
+  /* Dejamos el selector aquí, pero sin contenido, para que herede de _utilities.scss. */
+  content: "";
+}
+
 .service-page {
   background-color: #fbe2e1;
   text-align: center;
@@ -636,7 +691,7 @@ a:hover {
   font-family: "Montserrat", sans-serif;
 }
 .service-page .service-intro {
-  /* CORRECCIÓN: Dejo SOLO el margen, el estilo completo viene de .btn-diagnostico */
+  /* CORRECCIÓN: Dejamos SOLO el margen, el estilo completo viene de .btn-diagnostico */
 }
 .service-page .service-intro .btn-diagnostico {
   margin-top: 20px;
@@ -656,8 +711,8 @@ a:hover {
   font-family: "Montserrat", sans-serif;
 }
 .service-page .service-secondary-cta {
-  /* CORRECCIÓN: Elimino la llamada al mixin; el estilo base viene de .btn-primary */
-  /* Dejo el selector aquí, pero sin contenido, para que herede de _utilities.scss */
+  /* CORRECCIÓN: Eliminamos la llamada al mixin; el estilo base viene de .btn-primary */
+  /* Dejamos el selector aquí, pero sin contenido, para que herede de _utilities.scss */
 }
 .service-page .service-content {
   background-color: #ffffff;
@@ -697,20 +752,20 @@ a:hover {
 }
 .service-page .service-intro {
   text-align: center;
-  /* CORRECCIÓN: Dejo SOLO el margen específico, el estilo completo viene del mixin base */
+  /* CORRECCIÓN: Dejamos SOLO el margen específico, el estilo completo viene del mixin base */
 }
 .service-page .service-intro .btn-diagnostico {
   margin-top: 20px;
 }
 .service-page .service-secondary-content {
   text-align: center;
-  /* CORRECCIÓN: Dejo SOLO el margen específico */
+  /* CORRECCIÓN: Dejamos SOLO el margen específico */
 }
 .service-page .service-secondary-content .btn-primary {
   margin-top: 10px;
 }
 .service-page .service-hero-image img {
-  /* CORRECCIÓN: Dejo las reglas de tamaño y centrado específicas de esta imagen */
+  /* CORRECCIÓN: Dejamos las reglas de tamaño y centrado específicas de esta imagen */
   max-width: 250px;
   height: auto;
   margin: 20px auto;
