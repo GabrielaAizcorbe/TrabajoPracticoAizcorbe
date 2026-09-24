@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gabriela-aizcorbe-consultora.netlify.app/sitemap.xml
