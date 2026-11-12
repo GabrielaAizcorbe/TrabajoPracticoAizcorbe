@@ -19,6 +19,121 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../css/estilos.css">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://gabriela-aizcorbe-consultora.netlify.app/#negocio",
+      "name": "G.A. Consultora",
+      "description": "Consultoría organizacional y mentoría 1:1 para emprendedores, profesionales independientes y pequeñas empresas. Transformar desde lo humano.",
+      "url": "https://gabriela-aizcorbe-consultora.netlify.app/",
+      "logo": "https://gabriela-aizcorbe-consultora.netlify.app/img/logorosayazul.png",
+      "image": "https://gabriela-aizcorbe-consultora.netlify.app/img/logorosayazul.png",
+      "telephone": "+5493442559020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Concepción del Uruguay",
+        "addressRegion": "Entre Ríos",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -32.4825,
+        "longitude": -58.2372
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Concepción del Uruguay"
+        },
+        {
+          "@type": "Country",
+          "name": "Argentina"
+        }
+      ],
+      "founder": {
+        "@id": "https://gabriela-aizcorbe-consultora.netlify.app/#gabriela"
+      },
+      "sameAs": [
+        "https://www.instagram.com/gabriela_aizcorbe/",
+        "https://www.facebook.com/GabrielaAizcorbe"
+      ],
+      "makesOffer": {
+        "@type": "Offer",
+        "itemOffered": {
+          "@id": "https://gabriela-aizcorbe-consultora.netlify.app/page/mentoria#servicio"
+        }
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://gabriela-aizcorbe-consultora.netlify.app/#gabriela",
+      "name": "Gabriela Aizcorbe",
+      "jobTitle": "Consultora organizacional y mentora 1:1",
+      "url": "https://gabriela-aizcorbe-consultora.netlify.app/page/quien-soy",
+      "worksFor": {
+        "@id": "https://gabriela-aizcorbe-consultora.netlify.app/#negocio"
+      },
+      "knowsAbout": [
+        "Propuesta de valor",
+        "Mejora continua",
+        "Desarrollo de marca",
+        "Procesos para pymes y emprendedores"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://gabriela-aizcorbe-consultora.netlify.app/page/mentoria#servicio",
+      "name": "Mentoría 1:1 · Identidad y Propuesta de Valor",
+      "serviceType": "Mentoría para emprendedores",
+      "description": "Acompañamiento individual de seis semanas para ordenar la experiencia, definir el cliente ideal y armar la propuesta de valor de un emprendimiento.",
+      "url": "https://gabriela-aizcorbe-consultora.netlify.app/page/mentoria",
+      "provider": {
+        "@id": "https://gabriela-aizcorbe-consultora.netlify.app/#negocio"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Emprendedores unipersonales y profesionales independientes"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto dura la mentoría?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seis semanas de acompañamiento individual."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es una propuesta de valor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es la explicación clara de qué problema resolvés, para quién y por qué tu forma de resolverlo es distinta o mejor. Es la base para definir tu oferta, tus precios y tu comunicación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo empiezo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con una conversación de descubrimiento gratuita, donde vemos tu situación y si esta mentoría es lo que necesitás."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
 </head>
 
 <body>
@@ -51,7 +166,7 @@
         <section class="service-page">
             <div class="container">
                 <div class="service-intro">
-                    <h1>Mentoría 1:1 · Identidad y Propuesta de Valor</h1>
+                    <h1>Mentoría para emprendedores 1:1: ordená tu experiencia y tu propuesta de valor</h1>
                     <h2>Seis semanas para ordenar lo que ya sabés hacer.</h2>
                     <div class="service-hero-image">
                         <img src="../img/abstracta-hero.png" alt="Ilustración abstracta de transformación y crecimiento">
@@ -59,16 +174,40 @@
                     <a href="./contacto.html" class="btn-diagnostico">Solicitá una conversación de descubrimiento GRATIS</a>
                 </div>
 
-                <div class="service-secondary-cta">
-                    <h3>Un acompañamiento de seis semanas para ordenar tu experiencia, tus competencias, tu cliente, tu propuesta, tus decisiones y tus próximos pasos.</h3>
-                </div>
-
                 <div class="service-content">
-                    <h2>Para quién es esta mentoría.</h2>
-                    <p>Está pensada para emprendedores unipersonales y profesionales —especialmente +40/+50— que ya tienen experiencia y conocimientos, pero sienten esa experiencia dispersa y necesitan estructura, claridad y una propuesta de valor profesional para convertirla en un negocio sostenible.</p>
+                    <h2>¿Qué es la mentoría 1:1 de G.A. Consultora?</h2>
+                    <p>Es un acompañamiento individual de seis semanas para emprendedores y profesionales independientes que ya tienen experiencia, pero la sienten dispersa. Trabajamos juntas para ordenarla, definir a qué cliente le servís y armar una propuesta de valor clara, con decisiones y próximos pasos concretos para tu negocio.</p>
 
-                    <h2>Cómo trabajamos.</h2>
-                    <p>Es un proceso de acompañamiento, no una fórmula genérica: en seis semanas ordenamos juntas tu experiencia y competencias, definimos a quién le servís y qué le ofrecés, y convertimos todo eso en decisiones y próximos pasos concretos para tu negocio.</p>
+                    <h2>¿Para quién es esta mentoría?</h2>
+                    <p>Está pensada para emprendedores unipersonales y profesionales independientes —especialmente +40 y +50— que tienen años de trayectoria y conocimientos, pero necesitan estructura, claridad y una propuesta profesional para convertirlos en un negocio sostenible.</p>
+                    <h3>Emprender después de los 50 con la experiencia a favor</h3>
+                    <p>Empezar o reorientar un negocio a los 40, a los 50 o más no es empezar de cero: tu trayectoria ya es un activo. El desafío suele ser ordenarla y traducirla en una oferta que otras personas entiendan y elijan. En eso te acompaño.</p>
+
+                    <h2>Cómo trabajamos en seis semanas</h2>
+                    <p>Es un proceso de acompañamiento, no una fórmula genérica. En seis semanas avanzamos en cuatro frentes:</p>
+                    <h3>Ordenar tu experiencia y tus competencias</h3>
+                    <p>Ponemos sobre la mesa lo que sabés hacer, lo que hiciste y lo que te distingue, y lo organizamos para que deje de sentirse disperso.</p>
+                    <h3>Definir el cliente ideal de tu negocio</h3>
+                    <p>Definimos a quién le servís: qué necesita, qué problema tiene y cómo te encuentra. Con un cliente ideal claro, el resto de las decisiones se simplifica.</p>
+                    <h3>Armar la propuesta de valor de tu emprendimiento</h3>
+                    <p>Convertimos lo que sabés hacer en una propuesta concreta: qué ofrecés, para quién, qué resultado puede esperar esa persona y por qué elegirte.</p>
+                    <h3>Decidir tus próximos pasos</h3>
+                    <p>Cerramos con decisiones y un plan de acción que puedas aplicar de forma autónoma, sin depender de fórmulas ajenas.</p>
+
+                    <h2>Mentor, coach o consultor: ¿en qué se diferencian?</h2>
+                    <p>Un coach te ayuda a encontrar tus propias respuestas a través de preguntas; un consultor diagnostica y propone soluciones concretas; un mentor acompaña desde su experiencia. Esta mentoría toma lo mejor de cada mirada: diagnóstico, método y acompañamiento personalizado, siempre con foco en lo humano.</p>
+
+                    <h2>Preguntas frecuentes</h2>
+                    <h3>¿Cuánto dura la mentoría?</h3>
+                    <p>Seis semanas de acompañamiento individual.</p>
+                    <h3>¿Qué es una propuesta de valor?</h3>
+                    <p>Es la explicación clara de qué problema resolvés, para quién y por qué tu forma de resolverlo es distinta o mejor. Es la base para definir tu oferta, tus precios y tu comunicación.</p>
+                    <h3>¿Cómo empiezo?</h3>
+                    <p>Con una conversación de descubrimiento gratuita, donde vemos tu situación y si esta mentoría es lo que necesitás.</p>
+
+                    <h2>Empecemos con una conversación de descubrimiento gratuita</h2>
+                    <p>Contame en qué punto estás y vemos juntas cómo ordenar lo que ya sabés hacer.</p>
+                    <a href="./contacto.html" class="btn-diagnostico">Solicitá una conversación de descubrimiento GRATIS</a>
 
                     <p class="final-phrase">Transformar desde lo humano: la técnica es necesaria, pero no alcanza — detrás de cada negocio hay una historia y una identidad.</p>
                 </div>
